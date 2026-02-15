@@ -99,9 +99,10 @@ function createPanel(i){
 
   // stats card
   const statsCard = document.createElement('section'); statsCard.className='card';
+  const callsign = document.createElement('input'); callsign.type='text'; callsign.placeholder='Callsign'; callsign.className='callsign-input';
   const stH = document.createElement('h3'); stH.textContent='Stats';
   const statsGrid = document.createElement('div'); statsGrid.className='unit-stats'; statsGrid.id = `stats-${i}`;
-  statsCard.appendChild(stH); statsCard.appendChild(statsGrid);
+  statsCard.appendChild(callsign); statsCard.appendChild(stH); statsCard.appendChild(statsGrid);
 
   // gameplay card
   const gpCard = document.createElement('section'); gpCard.className='card';
