@@ -1,19 +1,21 @@
-const PANEL_COUNT = 4;
+var PANEL_COUNT = 4;
+var NEW_COUNT = 4;
 const panelGrid = document.getElementById('panel-grid');
+const unit_numbers = document.getElementById('unit-numbers');
 
 let units = [];
 let items = [];
 let ammo = [];
 
 // per-panel runtime state and refs
-const panels = Array.from({length: PANEL_COUNT}, () => ({
+var panels = Array.from({length: PANEL_COUNT}, () => ({
   state: {
     selectedIndex: 0,
     maxHP: 0, currentHP: 0,
     heatLimit: 0, currentHeat: 0,
     savedHPBeforeHeatOverride: null
   },
-  refs: {}
+  refs: {platformList: null, statsGrid: null, statsMap: {}, totalEl: null, gameplayHp: null, gameplayHeat: null, hpPlus: null, hpMinus: null, heatPlus: null, heatMinus: null, destroyed: null}
 }));
 
 async function loadData(){
@@ -33,15 +35,36 @@ async function loadData(){
   initPanels();
 }
 
-function initPanels(){
-  panelGrid.innerHTML = '';
-  for(let i=0;i<PANEL_COUNT;i++){
-    const panelEl = createPanel(i);
-    panelGrid.appendChild(panelEl);
-    populateUnitSelect(i);
-    renderPanel(i);
+function initPanels() {
+  // panelGrid.innerHTML = '';
+  var panel_diff = NEW_COUNT - PANEL_COUNT;
+  if (panel_diff > 0) {
+    // if reducing panels, remove excess panels from the end
+    for (let i = PANEL_COUNT; i < NEW_COUNT; i++) {
+      const panelEl = createPanel(i);
+      panelGrid.appendChild(panelEl);
+      populateUnitSelect(i);
+      renderPanel(i);
+    }
+    // adjust widths based on current window size
+  } else if (panel_diff < 0) {
+    // for (let i = 0; i < NEW_COUNT; i++) {
+    //   const panelEl = createPanel(i);
+    //   panelGrid.appendChild(panelEl);
+    //   populateUnitSelect(i);
+    //   renderPanel(i);
+    // }
+  } else {
+    for (let i = 0; i < PANEL_COUNT; i++) {
+      const panelEl = createPanel(i);
+      panelGrid.appendChild(panelEl);
+      populateUnitSelect(i);
+      renderPanel(i);
+    }
+
+    
+
   }
-  // adjust widths based on current window size
   adjustPanelWidths();
 }
 
@@ -63,6 +86,7 @@ function adjustPanelWidths(){
 
 window.addEventListener('resize', adjustPanelWidths);
 window.addEventListener('orientationchange', adjustPanelWidths);
+
 
 function createPanel(i){
   const wrapper = document.createElement('div'); wrapper.className='unit-panel';
@@ -417,3 +441,68 @@ function onHeatPlus(i){ const p=panels[i]; if(!units[p.state.selectedIndex]) ret
 function onHeatMinus(i){ const p=panels[i]; if(!units[p.state.selectedIndex]) return; p.state.currentHeat = Math.max(0, p.state.currentHeat-1); if(p.state.currentHeat<=p.state.heatLimit && p.state.savedHPBeforeHeatOverride!==null){ p.state.currentHP = p.state.savedHPBeforeHeatOverride; p.state.savedHPBeforeHeatOverride = null; } updatePanelGameplayDisplay(i); }
 
 loadData().catch(err=>{ console.error(err); alert('Failed to load JSON files. Run a static server from the Tool folder and open ui/index.html (see README).') });
+
+function updatePanelArray(newCount) {
+  if(newCount > PANEL_COUNT){
+    // add new panel states for the additional panels
+    const additionalPanels = Array.from({ length: newCount - PANEL_COUNT }, () => ({
+      state: {
+      selectedIndex: 0,
+      maxHP: 0, currentHP: 0,
+      heatLimit: 0, currentHeat: 0,
+      savedHPBeforeHeatOverride: null
+    },
+    refs: {}
+  }));
+    panels = panels.concat(additionalPanels);
+  } else if(newCount < PANEL_COUNT){
+    // remove excess panel states if reducing the number of panels
+    panels = panels.slice(0, newCount);
+  } 
+}
+// TESTBEREICH
+
+// DAS GEHT
+document.getElementById("unit_numbers").addEventListener("change", (event) => {
+   NEW_COUNT = parseInt(event.target.value);
+
+  if(NEW_COUNT > PANEL_COUNT){
+    // if we're increasing the number of panels, create new ones
+    updatePanelArray(NEW_COUNT);
+    initPanels();
+    PANEL_COUNT = NEW_COUNT;
+    
+  } else if(NEW_COUNT < PANEL_COUNT){
+    // if we're decreasing the number of panels, remove excess panels
+    while(panelGrid.children.length > NEW_COUNT){
+      panelGrid.removeChild(panelGrid.lastChild);
+      updatePanelArray(NEW_COUNT);
+      PANEL_COUNT = NEW_COUNT;
+    }
+  }
+  
+  adjustPanelWidths();
+
+});
+
+
+// function adjustPanelCount(){
+//   const option = unit_numbers.options[unit_numbers.selectedIndex].value;
+//   const newCount = parseInt(option);
+//   if(newCount > PANEL_COUNT){
+//     // if we're increasing the number of panels, create new ones
+//       PANEL_COUNT = newCount;
+//       initPanels;
+    
+//   } else if(newCount < PANEL_COUNT){
+//     // if we're decreasing the number of panels, remove excess panels
+//     while(panelGrid.children.length > newCount){
+//       panelGrid.removeChild(panelGrid.lastChild);
+//     }
+//   }
+//   console.log("Selected Value:", PANEL_COUNT);
+//   console.log("Selected Text:", newCount);
+
+//   adjustPanelWidths();
+// };
+
