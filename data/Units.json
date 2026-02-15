@@ -1,0 +1,70 @@
+{
+  "Units": [
+    {
+      "Category": "Mech",
+      "Name": "Light Frame",
+      "Speed (S)": 7,
+      "Combat Skill (CS)": "4+",
+      "Armor (AR)": "6+",
+      "Hull Points (HP)": 4,
+      "Heat Limit (HL)": 12,
+      "Platforms (PF)": 3,
+      "Cost": 50000
+    },
+    {
+      "Category": "Mech",
+      "Name": "Standard Frame",
+      "Speed (S)": 6,
+      "Combat Skill (CS)": "4+",
+      "Armor (AR)": "6+",
+      "Hull Points (HP)": 6,
+      "Heat Limit (HL)": 10,
+      "Platforms (PF)": 4,
+      "Cost": 50000
+    },
+    {
+      "Category": "Mech",
+      "Name": "Heavy Frame",
+      "Speed (S)": 5,
+      "Combat Skill (CS)": "4+",
+      "Armor (AR)": "5+",
+      "Hull Points (HP)": 7,
+      "Heat Limit (HL)": 9,
+      "Platforms (PF)": 5,
+      "Cost": 50000
+    },
+    {
+      "Category": "Ground Forces",
+      "Name": "Land Vehicle",
+      "Speed (S)": 5,
+      "Combat Skill (CS)": "4+",
+ "Armor (AR)": "6+",
+      "Hull Points (HP)": 4,
+      "Heat Limit (HL)": 7,
+      "Platforms (PF)": 3,
+      "Cost": 30000
+    },
+    {
+      "Category": "Ground Forces",
+      "Name": "Aircraft",
+      "Speed (S)": 8,
+      "Combat Skill (CS)": "4+",
+      "Armor (AR)": "6+",
+      "Hull Points (HP)": 2,
+      "Heat Limit (HL)": 8,
+      "Platforms (PF)": 2,
+      "Cost": 25000
+    },
+    {
+      "Category": "Ground Forces",
+      "Name": "Infantry",
+      "Speed (S)": 4,
+      "Combat Skill (CS)": "5+",
+      "Armor (AR)": "6+",
+      "Hull Points (HP)": 2,
+      "Heat Limit (HL)": 5,
+      "Platforms (PF)": 2,
+      "Cost": 10000
+    }
+  ]
+}

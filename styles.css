@@ -1,0 +1,43 @@
+:root{
+  --bg:#f6f7f9; --card:#fff; --accent:#1f5fbf; --muted:#666;
+}
+*{box-sizing:border-box;font-family:Segoe UI, Roboto, Arial, sans-serif}
+body{background:var(--bg);margin:0;padding:10px;color:#222}
+.card{background:var(--card);border-radius:6px;padding:12px;margin:12px 0;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.card > h3{margin-top:6px;margin-bottom:8px;font-size:15px}
+.panel-grid{display:grid;gap:12px;justify-content:start}
+.unit-panel .card{margin:8px 0}
+.unit-stats{display:grid;grid-template-columns:120px 1fr;gap:6px 12px;align-items:center}
+.unit-stats .label{color:var(--muted)}
+.unit-stats .value.modified{color:green;font-weight:700}
+/* align main to left edge instead of centered */
+/* allow main to use full width of the viewport */
+main{max-width:none;margin:0}
+.row{display:flex;gap:8px;align-items:center;margin:8px 0}
+label{min-width:120px;color:var(--muted)}
+/* Header labels inside unit panels should not create a large left gap */
+.unit-panel > .row > label{min-width:0;margin-right:8px;font-weight:600;color:var(--muted)}
+select,button{padding:6px 8px;border:1px solid #ddd;border-radius:4px}
+#stats-grid{display:grid;grid-template-columns:120px 1fr;gap:6px 12px;align-items:center}
+.platform-slot{display:grid;grid-template-columns:240px 90px 90px 1fr;grid-template-rows:auto auto;gap:6px;align-items:center;margin:6px 0}
+.platform-slot > select, .platform-slot > div:first-child {width:240px;min-width:240px}
+.platform-damage{text-align:center;}
+.platform-range{text-align:center;color:var(--muted)}
+.platform-special{grid-column:1 / 4;font-size:12px;color:var(--muted);padding-top:4px}
+.ammo-special{font-size:12px;color:var(--muted);padding-top:4px;margin-left:8px}
+/* header row for platform columns */
+.platform-slot.header{font-weight:700;color:var(--muted);font-size:13px}
+.platform-slot.header .platform-special, .platform-slot.header .ammo-special{display:none}
+
+/* ammo container when shown under platform special */
+.ammo-container{grid-column:1 / 4;display:flex;align-items:center;gap:8px;padding-left:12px}
+
+/* shrink gameplay area visuals */
+.unit-panel > section.card:nth-of-type(3){padding:8px;font-size:13px}
+.gameplay-row{margin:4px 0;padding:4px 0;min-height:26px;align-items:center}
+.gameplay-row .buttons button{width:20px;height:26px;margin-left:4px;font-size:13px}
+footer{margin-top:18px;color:var(--muted);font-size:13px}
+
+.gameplay-row{display:flex;justify-content:space-between;align-items:center;margin:8px 0}
+.gameplay-row .buttons button{width:34px;height:28px;margin-left:6px}
+.destroyed{color:#ff2b2b;background:rgba(255,43,43,0.06);padding:8px;border-radius:6px;text-align:center;font-weight:700;font-size:18px}

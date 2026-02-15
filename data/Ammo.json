@@ -1,0 +1,34 @@
+{
+  "Ammo": [
+    {
+      "Name": "Flechette Rounds",
+      "Price": 5000,
+      "Special": "Weapons with this Ammo gain AP."
+    },
+    {
+      "Name": "Hellfire Rounds",
+      "Price": 10000,
+      "Special": "Increase Weapon Damage by 1."
+    },
+    {
+      "Name": "EMF Rounds",
+      "Price": 10000,
+      "Special": "The model damaged by a weapon with this Ammo has its Speed reduced by 2 until the end of the target's next activation."
+    },
+    {
+      "Name": "Concussive Rounds",
+      "Price": 5000,
+      "Special": "When a weapon equipped with this Ammo hits an enemy model, the target is immediately moved 2\" directly away from the firing model. If this causes the model to make contact with another model, or Terrain, apply 1 Damage to each of them."
+    },
+    {
+      "Name": "Rapid Fire Rounds",
+      "Price": 20000,
+      "Special": "When a weapon loaded with this Ammo rolls a 6 to hit, apply critical damage normally, then you may roll another Ranged Attack with this weapon."
+    },
+    {
+      "Name": "Tracer Rounds",
+      "Price": 5000,
+      "Special": "Apply Position Compromised to the model hit with this Ammo. The firing model also gains Position Compromised."
+    }
+  ]
+}

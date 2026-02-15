@@ -1,0 +1,331 @@
+{
+	"Platform": {
+		"Items": [
+			{
+				"Category": "Ranged Weapon",
+				"Name": "Flame Thrower",
+				"Price": 10000,
+				"Damage": "1",
+				"Range": "10\"",
+				"Special": "On a successful Hit, increase target models HEAT by 1d2. May not be equipped with Specialty Ammunition.",
+				"Mods": "-"
+			},
+			{
+				"Category": "Ranged Weapon",
+				"Name": "Light Weapon",
+				"Price": 10000,
+				"Damage": "1",
+				"Range": "inf",
+				"Special": "-",
+				"Mods": "-"
+			},
+			{
+				"Category": "Ranged Weapon",
+				"Name": "Medium Weapon",
+				"Price": 15000,
+				"Damage": "2",
+				"Range": "inf",
+				"Special": "-",
+				"Mods": "-"
+			},
+			{
+				"Category": "Ranged Weapon",
+				"Name": "Heavy Weapon",
+				"Price": 25000,
+				"Damage": "4",
+				"Range": "inf",
+				"Special": "Equipped model may only move at half speed if it fires this weapon this turn. Takes up 2 PFs.",
+				"Mods": "-"
+			},
+			{
+				"Category": "Ranged Weapon",
+				"Name": "RAIL Weapon",
+				"Price": 45000,
+				"Damage": "d3",
+				"Range": "inf",
+				"Special": "Pick a visible point on the battlefield. Draw a straight line starting from the firing model to the chosen point. Roll one attack for each model and destructible terrain the line passes through. This attack hits friendly models. The firing model gains +1 HEAT when this weapon is used.",
+				"Mods": "-"
+			},
+			{
+				"Category": "Ranged Weapon",
+				"Name": "A.I. Missile System",
+				"Price": 15000,
+				"Damage": "1",
+				"Range": "20\"",
+				"Special": "When making a Ranged Attack, this weapon does not require line of sight. Ignore any cover bonus.",
+				"Mods": "-"
+			},
+			{
+				"Category": "Ranged Weapon",
+				"Name": "Long Range Systems",
+				"Price": 25000,
+				"Damage": "2 (AP)",
+				"Range": "inf",
+				"Special": "Ignore the -1 CS from firing at Long Range.",
+				"Mods": "-"
+			},
+			{
+				"Category": "Ranged Weapon",
+				"Name": "Large Missile Battery",
+				"Price": 30000,
+				"Damage": "d2",
+				"Range": "inf",
+				"Special": "When targeting a model, roll to hit with this weapon against all models and terrain within 2\" of the original target.",
+				"Mods": "-"
+			},
+			{
+				"Category": "Melee Weapon",
+				"Name": "Basic Combat Attachment",
+				"Price": 5000,
+				"Damage": "1",
+				"Range": "inf",
+				"Special": "-",
+				"Mods": "-"
+			},
+			{
+				"Category": "Melee Weapon",
+				"Name": "Close Combat Weapon",
+				"Price": 10000,
+				"Damage": "2",
+				"Range": "inf",
+				"Special": "-",
+				"Mods": "-"
+			},
+			{
+				"Category": "Melee Weapon",
+				"Name": "Cable Whip",
+				"Price": 15000,
+				"Damage": "2",
+				"Range": "3\"",
+				"Special": "This weapon has an Engagement range of 3\" and may treat enemies as if they are within 1\".",
+				"Mods": "-"
+			},
+			{
+				"Category": "Melee Weapon",
+				"Name": "Lance",
+				"Price": 20000,
+				"Damage": "1",
+				"Range": "inf",
+				"Special": "If this model made a Move Action this turn, increase this weapon's Damage by +2, and gains AP for this Action.",
+				"Mods": "-"
+			},
+			{
+				"Category": "Melee Weapon",
+				"Name": "Power Weapon",
+				"Price": 15000,
+				"Damage": "2 (AP)",
+				"Range": "inf",
+				"Special": "On an attack roll of 1, the power core burns out, losing AP for the rest of the match.",
+				"Mods": "-"
+			},
+			{
+				"Category": "Melee Weapon",
+				"Name": "Electric Field",
+				"Price": 10000,
+				"Damage": "1",
+				"Range": "inf",
+				"Special": "Make an attack against all other models within 2\" of you. Each model that takes damage is pushed back 1\".",
+				"Mods": "-"
+			},
+			{
+				"Category": "Melee Weapon",
+				"Name": "Piston Gauntlet",
+				"Price": 10000,
+				"Damage": "2",
+				"Range": "inf",
+				"Special": "When this weapon hits, you may move the target model 1\" directly away from you.",
+				"Mods": "-"
+			},
+			{
+				"Category": "Melee Weapon",
+				"Name": "Energy Sword",
+				"Price": 15000,
+				"Damage": "2",
+				"Range": "inf",
+				"Special": "Causes Critical Hits on attack rolls of 5+. On an attack roll of 1, the fusion core burns out and this weapon becomes a 1 Damage melee weapon for the rest of the game.",
+				"Mods": "-"
+			}
+		,
+			{
+				"Category": "Upgrade",
+				"Name": "Armor MK I",
+				"Price": 10000,
+				"Damage": "-",
+				"Range": "-",
+				"Special": "AR becomes 5+.",
+				"Mods": "AR=5+"
+			},
+			{
+				"Category": "Upgrade",
+				"Name": "Armor MK II",
+				"Price": 25000,
+				"Damage": "-",
+				"Range": "-",
+				"Special": "AR becomes 4+.",
+				"Mods": "AR=4+"
+			},
+			{
+				"Category": "Upgrade",
+				"Name": "Reactive Armor",
+				"Price": 50000,
+				"Damage": "-",
+				"Range": "-",
+				"Special": "Ignore the first 1 point of Damage this model takes per turn.",
+				"Mods": "-"
+			},
+			{
+				"Category": "Upgrade",
+				"Name": "VTOL",
+				"Price": 25000,
+				"Damage": "-",
+				"Range": "-",
+				"Special": "Ignore terrain when making a Move Action.",
+				"Mods": "-"
+			},
+			{
+				"Category": "Upgrade",
+				"Name": "Thrusters",
+				"Price": 10000,
+				"Damage": "-",
+				"Range": "-",
+				"Special": "Gain +1 Speed.",
+				"Mods": "S+1"
+			},
+			{
+				"Category": "Upgrade",
+				"Name": "Heat Sink",
+				"Price": 10000,
+				"Damage": "-",
+				"Range": "-",
+				"Special": "New HEAT Check values: 1=2 HEAT, 2=1 HEAT, 3-6=0 HEAT.",
+				"Mods": "-"
+			},
+			{
+				"Category": "Upgrade",
+				"Name": "Sensor Array",
+				"Price": 25000,
+				"Damage": "-",
+				"Range": "-",
+				"Special": "Critical hits deal an extra +1 damage.",
+				"Mods": "-"
+			},
+			{
+				"Category": "Upgrade",
+				"Name": "Heavy Plating",
+				"Price": 20000,
+				"Damage": "-",
+				"Range": "-",
+				"Special": "Increase HP by 1.",
+				"Mods": "HP+1"
+			},
+			{
+				"Category": "Upgrade",
+				"Name": "Core Stabilizers",
+				"Price": 10000,
+				"Damage": "-",
+				"Range": "-",
+				"Special": "Increase your HEAT limit by 2.",
+				"Mods": "HL+2"
+			},
+			{
+				"Category": "Upgrade",
+				"Name": "Extra Platforms",
+				"Price": 15000,
+				"Damage": "-",
+				"Range": "-",
+				"Special": "Increase your model's Platforms by 1. This does not take up a PF slot.",
+				"Mods": "PF+1"
+			},
+			{
+				"Category": "Upgrade",
+				"Name": "Self Destruct",
+				"Price": 10000,
+				"Damage": "-",
+				"Range": "-",
+				"Special": "During your turn if you have 7 or more HEAT, you may make a <Self Destruct Action> and your model explodes.",
+				"Mods": "-"
+			},
+			{
+				"Category": "Upgrade",
+				"Name": "Camouflage",
+				"Price": 30000,
+				"Damage": "-",
+				"Range": "-",
+				"Special": "You may use an action to gain the <Active Camo> status until this model's next action. While under <Active Camo>, enemy models making Ranged attacks modify their CS rolls by -1.",
+				"Mods": "-"
+			},
+			{
+				"Category": "Upgrade",
+				"Name": "Nuclear Core",
+				"Price": 10000,
+				"Damage": "-",
+				"Range": "-",
+				"Special": "When this Mech explodes, it explodes as if it were at HEAT 10.",
+				"Mods": "-"
+			},
+			{
+				"Category": "Upgrade",
+				"Name": "Targeting System",
+				"Price": 45000,
+				"Damage": "-",
+				"Range": "-",
+				"Special": "This model improves their CS rolls by +1.",
+				"Mods": "-"
+			},
+			{
+				"Category": "Upgrade",
+				"Name": "Up-link",
+				"Price": 15000,
+				"Damage": "-",
+				"Range": "-",
+				"Special": "You may spend an Action and target an enemy model in Line of Sight; the target model gains Position Compromised.",
+				"Mods": "-"
+			},
+			{
+				"Category": "Upgrade",
+				"Name": "Long Range Targeting",
+				"Price": 15000,
+				"Damage": "-",
+				"Range": "-",
+				"Special": "When making Ranged Actions, ignore the Long Range rule.",
+				"Mods": "-"
+			},
+			{
+				"Category": "Upgrade",
+				"Name": "Defense Array",
+				"Price": 10000,
+				"Damage": "-",
+				"Range": "-",
+				"Special": "Any time an enemy model gets within 1\", roll a d6. On a 4+ the enemy model is instead placed just outside 1\".",
+				"Mods": "-"
+			},
+			{
+				"Category": "Upgrade",
+				"Name": "Thermal Imaging",
+				"Price": 20000,
+				"Damage": "-",
+				"Range": "-",
+				"Special": "When targeting a model with 5 or more HEAT, gain +1 to your CS roll.",
+				"Mods": "-"
+			},
+			{
+				"Category": "Upgrade",
+				"Name": "Counter Missiles",
+				"Price": 10000,
+				"Damage": "-",
+				"Range": "-",
+				"Special": "When hit with a ranged critical hit, negate the extra damage from the critical hit.",
+				"Mods": "-"
+			},
+			{
+				"Category": "Upgrade",
+				"Name": "Virus Program",
+				"Price": 20000,
+				"Damage": "-",
+				"Range": "-",
+				"Special": "Once per game: when you activate the model equipped with this Upgrade, you may select an enemy model to infect. The infected model may take only one action this turn. That action cannot be bolstered.",
+				"Mods": "-"
+			}
+		]
+	}
+}
