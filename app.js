@@ -130,11 +130,11 @@ function createPanel(i){
 
   // platforms card
   const platCard = document.createElement('section'); platCard.className='card';
-  const plH = document.createElement('h3'); plH.textContent='Platforms';
+  const plH = document.createElement('h3'); plH.textContent='Platforms'; 
   const plList = document.createElement('div'); plList.id = `platform-list-${i}`; plList.className='platform-list';
   // add header row for platform columns
   const plHeader = document.createElement('div'); plHeader.className='platform-slot header';
-  const hPlatform = document.createElement('div'); hPlatform.textContent='Platform';
+  const hPlatform = document.createElement('div'); hPlatform.textContent='Platform'; hPlatform.className='platform-header';
   const hDmg = document.createElement('div'); hDmg.textContent='Damage'; hDmg.className='platform-damage';
   const hRange = document.createElement('div'); hRange.textContent='Range'; hRange.className='platform-range';
   // add an empty spacer so header has same number of columns as rows (4)
@@ -312,7 +312,7 @@ function addPlatformRow(panelIndex, slotIndex, opts={}){
   const row = document.createElement('div'); row.className='platform-slot';
   if(opts.generatedBy){ row.dataset.generated = 'true'; row.dataset.generatedBy = opts.generatedBy; }
 
-  const select = document.createElement('select');
+  const select = document.createElement('select'); select.className = 'platform-select';
   const emptyOpt = document.createElement('option'); emptyOpt.value=''; emptyOpt.textContent='Empty'; select.appendChild(emptyOpt);
   const byCat = items.reduce((acc,it)=>{ (acc[it.Category]=acc[it.Category]||[]).push(it); return acc; },{});
   Object.keys(byCat).forEach(cat=>{
