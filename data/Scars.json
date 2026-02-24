@@ -1,0 +1,46 @@
+{
+    "Scars": [
+        {
+            "Name": "Disrupted Targeting",
+            "Description": "-1 to all Attack Actions (A roll of 6 always hits)",
+            "Mods": "CSR",
+            "Value": -1
+        },
+        {
+            "Name": "Fractured Core",
+            "Description": "-1 to the models HEAT Limit (to a minimum Heat Limit 3.)",
+            "Mods": "HLV",
+            "Value": -1
+        },
+        {
+            "Name": "Weapon Destroyed",
+            "Description": "Remove a random Weapon Platform.",
+            "Mods": "",
+            "Value": 0
+        },
+        {
+            "Name": "Hamstring",
+            "Description": "The model has -1 Speed (to a minimum of 1).",
+            "Mods": "SV",
+            "Value": -1
+        },
+        {
+            "Name": "Damaged",
+            "Description": "Reduce the models total PFs by 1 (minimum of 1).",
+            "Mods": "PFV",
+            "Value": -1
+        },
+        {
+            "Name": "Armor Degradation",
+            "Description": "-1 to models AR rolls.",
+            "Mods": "ARR",
+            "Value": -1
+        },
+        {
+            "Name": "Weapon Destroyed",
+            "Description": "model adds +1 to all HEAT checks.",
+            "Mods": "HCR",
+            "Value": 1
+        }
+    ]
+}

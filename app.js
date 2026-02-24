@@ -6,6 +6,7 @@ const unit_numbers = document.getElementById('unit-numbers');
 let units = [];
 let items = [];
 let ammo = [];
+let scars = [];
 
 // per-panel runtime state and refs
 var panels = Array.from({length: PANEL_COUNT}, () => ({
@@ -19,18 +20,21 @@ var panels = Array.from({length: PANEL_COUNT}, () => ({
 }));
 
 async function loadData(){
-  const [uRes, pRes, aRes] = await Promise.all([
+  const [uRes, pRes, aRes, sRes] = await Promise.all([
     fetch('data/Units.json'),
     fetch('data/Platform.json'),
-    fetch('data/Ammo.json')
+    fetch('data/Ammo.json'),
+    fetch('data/Scars.json')
   ]);
   const ujson = await uRes.json();
   const pjson = await pRes.json();
   const ajson = await aRes.json();
+  const sjson = await sRes.json();
 
   units = ujson.Units || [];
   items = (pjson.Platform && pjson.Platform.Items) || pjson.Items || [];
   ammo = ajson.Ammo || [];
+  scars = sjson.Scars || [];
 
   initPanels();
 }
@@ -146,12 +150,30 @@ function createPanel(i){
   platCard.appendChild(plH); platCard.appendChild(plList);
   platCard.insertBefore(plHeader, plList);
 
+  // Scar Card
+  const scarCard = document.createElement('section'); scarCard.className='card';
+  const scarH = document.createElement('h3'); scarH.textContent='SCARs';
+  const scarList = document.createElement('div'); scarList.id = `scar-list-${i}`; scarList.className='scar-list';
+  scarCard.appendChild(scarH); scarCard.appendChild(scarList);
 
+  // populate scar list
+  scars.forEach(scar=>{
+    const scarRow = document.createElement('div'); scarRow.className='scar-row';
+    const scarLabel = document.createElement('div'); scarLabel.textContent=scar.Name; scarLabel.className='scar-label';
+    const scarDesc = document.createElement('div'); scarDesc.textContent=scar.Description; scarDesc.className='scar-description';
+    const scarSelect = document.createElement('select'); scarSelect.id = `scar-select-${i}-${scar.Name}`; scarSelect.className='scar-select';
+    scarSelect.innerHTML = '<option value="Zero">-</option><option value="One">One</option><option value="Two">Two</option><option value="Three">Three</option>';
+    scarRow.appendChild(scarLabel); scarRow.appendChild(scarSelect); scarRow.appendChild(scarDesc);
+    scarList.appendChild(scarRow);
+  });
+
+  
 
   wrapper.appendChild(header);
   wrapper.appendChild(statsCard);
   wrapper.appendChild(gpCard);
   wrapper.appendChild(platCard);
+  wrapper.appendChild(scarCard);
 
   // store refs
   panels[i].refs = {
@@ -463,9 +485,7 @@ function updatePanelArray(newCount) {
     panels = panels.slice(0, newCount);
   } 
 }
-// TESTBEREICH
 
-// DAS GEHT
 document.getElementById("unit_numbers").addEventListener("change", (event) => {
    NEW_COUNT = parseInt(event.target.value);
 
@@ -488,7 +508,9 @@ document.getElementById("unit_numbers").addEventListener("change", (event) => {
 
 });
 
+// TESTBEREICH
 
+// DAS GEHT
 // function adjustPanelCount(){
 //   const option = unit_numbers.options[unit_numbers.selectedIndex].value;
 //   const newCount = parseInt(option);
