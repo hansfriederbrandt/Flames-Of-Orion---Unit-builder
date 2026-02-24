@@ -78,7 +78,7 @@ function adjustPanelWidths(){
   const totalGaps = gap * (PANEL_COUNT - 1);
   let w = Math.floor((availableWindow - totalGaps) / PANEL_COUNT);
   const minW = 140;
-  const maxW = 800;
+  const maxW = 500;
   if(w < minW) w = minW;
   if(w > maxW) w = maxW;
   panelGrid.style.gridTemplateColumns = `repeat(${PANEL_COUNT}, ${w}px)`;
@@ -103,6 +103,9 @@ function createPanel(i){
   const stH = document.createElement('h3'); stH.textContent='Stats';
   const statsGrid = document.createElement('div'); statsGrid.className='unit-stats'; statsGrid.id = `stats-${i}`;
   statsCard.appendChild(callsign); statsCard.appendChild(stH); statsCard.appendChild(statsGrid);
+    // add total into the stats card (HP/Heat moved to gameplay area)
+  const totalRow = document.createElement('div'); totalRow.className='row'; totalRow.innerHTML = `<strong>Total Cost:</strong> <span id="total-${i}">0</span>¢`;
+  statsCard.appendChild(totalRow);
 
   // gameplay card
   const gpCard = document.createElement('section'); gpCard.className='card';
@@ -133,7 +136,7 @@ function createPanel(i){
   const plH = document.createElement('h3'); plH.textContent='Platforms'; 
   const plList = document.createElement('div'); plList.id = `platform-list-${i}`; plList.className='platform-list';
   // add header row for platform columns
-  const plHeader = document.createElement('div'); plHeader.className='platform-slot header';
+  const plHeader = document.createElement('div'); plHeader.className='platform-slot-header';
   const hPlatform = document.createElement('div'); hPlatform.textContent='Platform'; hPlatform.className='platform-header';
   const hDmg = document.createElement('div'); hDmg.textContent='Damage'; hDmg.className='platform-damage';
   const hRange = document.createElement('div'); hRange.textContent='Range'; hRange.className='platform-range';
@@ -143,9 +146,7 @@ function createPanel(i){
   platCard.appendChild(plH); platCard.appendChild(plList);
   platCard.insertBefore(plHeader, plList);
 
-  // add total into the stats card (HP/Heat moved to gameplay area)
-  const totalRow = document.createElement('div'); totalRow.className='row'; totalRow.innerHTML = `<strong>Total Cost:</strong> <span id="total-${i}">0</span>¢`;
-  statsCard.appendChild(totalRow);
+
 
   wrapper.appendChild(header);
   wrapper.appendChild(statsCard);
@@ -321,7 +322,8 @@ function addPlatformRow(panelIndex, slotIndex, opts={}){
     select.appendChild(grp);
   });
 
-  const ammoSel = document.createElement('select'); ammoSel.style.width='120px'; const ammoEmpty = document.createElement('option'); ammoEmpty.value=''; ammoEmpty.textContent='-'; ammoSel.appendChild(ammoEmpty);
+  const ammoSel = document.createElement('select'); ammoSel.className = 'ammo-select';
+  const ammoEmpty = document.createElement('option'); ammoEmpty.value=''; ammoEmpty.textContent='-'; ammoSel.appendChild(ammoEmpty);
   ammo.forEach(a=>{ const o=document.createElement('option'); o.value=a.Name; o.textContent=`${a.Name} — ${a.Price||0}¢`; ammoSel.appendChild(o)});
   ammoSel.disabled = true;
 
